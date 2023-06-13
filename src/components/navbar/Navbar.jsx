@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from "./navbar.module.css";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
 const links = [
   {
@@ -43,6 +44,7 @@ const Navbar = () => {
         Ai Braincenter
       </Link>
       <div className={styles.links}>
+        <DarkModeToggle />
         {links.map((link) => {
           return (
             <Link key={link.id} href={link.url} className={styles.link}>
@@ -50,9 +52,10 @@ const Navbar = () => {
             </Link>
           );
         })}
-        <button className={styles.logout}
+        <button
+          className={styles.logout}
           onClick={() => {
-            console.log("Logged out"); 
+            console.log("Logged out");
           }}
         >
           Logout
